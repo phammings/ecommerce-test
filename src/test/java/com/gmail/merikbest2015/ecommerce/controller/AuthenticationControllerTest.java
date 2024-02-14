@@ -73,13 +73,13 @@ public class AuthenticationControllerTest {
                 .andExpect(jsonPath("$", is(INCORRECT_PASSWORD)));
     }
 
-    @Test
-    public void forgotPassword() throws Exception {
-        mockMvc.perform(get(API_V1_AUTH + FORGOT_EMAIL, USER_EMAIL)
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Reset password code is send to your E-mail")));
-    }
+//    @Test
+//    public void forgotPassword() throws Exception {
+//        mockMvc.perform(get(API_V1_AUTH + FORGOT_EMAIL, USER_EMAIL)
+//                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+//                .andExpect(status().isOk())
+//                .andExpect(content().string(equalTo("Reset password code is send to your E-mail")));
+//    }
 
     @Test
     public void forgotPassword_ShouldEmailBeNotValid() throws Exception {

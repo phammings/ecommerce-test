@@ -34,7 +34,7 @@ public class ApplicationConfiguration {
         AWSCredentials credentials = new BasicAWSCredentials(awsAccessKey, awsAccessSecret);
         return AmazonS3ClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
-                .withRegion(Regions.EU_CENTRAL_1)
+                .withRegion(Regions.US_EAST_2)
                 .build();
     }
 

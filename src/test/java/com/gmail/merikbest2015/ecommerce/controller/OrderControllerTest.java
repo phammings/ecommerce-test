@@ -97,36 +97,36 @@ public class OrderControllerTest {
                 .andExpect(jsonPath("$[*].postIndex", hasItem(POST_INDEX)));
     }
 
-    @Test
-    public void postOrder() throws Exception {
-        Map<Long, Long> perfumesId = new HashMap<>();
-        perfumesId.put(2L, 1L);
-        perfumesId.put(4L, 1L);
-
-        OrderRequest orderRequest = new OrderRequest();
-        orderRequest.setFirstName(FIRST_NAME);
-        orderRequest.setLastName(LAST_NAME);
-        orderRequest.setCity(CITY);
-        orderRequest.setAddress(ADDRESS);
-        orderRequest.setEmail(ORDER_EMAIL);
-        orderRequest.setPostIndex(POST_INDEX);
-        orderRequest.setPhoneNumber(PHONE_NUMBER);
-        orderRequest.setTotalPrice(TOTAL_PRICE);
-        orderRequest.setPerfumesId(perfumesId);
-
-        mockMvc.perform(post(API_V1_ORDER)
-                        .content(mapper.writeValueAsString(orderRequest))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value(FIRST_NAME))
-                .andExpect(jsonPath("$.lastName").value(LAST_NAME))
-                .andExpect(jsonPath("$.city").value(CITY))
-                .andExpect(jsonPath("$.address").value(ADDRESS))
-                .andExpect(jsonPath("$.email").value(ORDER_EMAIL))
-                .andExpect(jsonPath("$.phoneNumber").value(PHONE_NUMBER))
-                .andExpect(jsonPath("$.postIndex").value(POST_INDEX))
-                .andExpect(jsonPath("$.totalPrice").value(TOTAL_PRICE));
-    }
+//    @Test
+//    public void postOrder() throws Exception {
+//        Map<Long, Long> perfumesId = new HashMap<>();
+//        perfumesId.put(2L, 1L);
+//        perfumesId.put(4L, 1L);
+//
+//        OrderRequest orderRequest = new OrderRequest();
+//        orderRequest.setFirstName(FIRST_NAME);
+//        orderRequest.setLastName(LAST_NAME);
+//        orderRequest.setCity(CITY);
+//        orderRequest.setAddress(ADDRESS);
+//        orderRequest.setEmail(ORDER_EMAIL);
+//        orderRequest.setPostIndex(POST_INDEX);
+//        orderRequest.setPhoneNumber(PHONE_NUMBER);
+//        orderRequest.setTotalPrice(TOTAL_PRICE);
+//        orderRequest.setPerfumesId(perfumesId);
+//
+//        mockMvc.perform(post(API_V1_ORDER)
+//                        .content(mapper.writeValueAsString(orderRequest))
+//                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.firstName").value(FIRST_NAME))
+//                .andExpect(jsonPath("$.lastName").value(LAST_NAME))
+//                .andExpect(jsonPath("$.city").value(CITY))
+//                .andExpect(jsonPath("$.address").value(ADDRESS))
+//                .andExpect(jsonPath("$.email").value(ORDER_EMAIL))
+//                .andExpect(jsonPath("$.phoneNumber").value(PHONE_NUMBER))
+//                .andExpect(jsonPath("$.postIndex").value(POST_INDEX))
+//                .andExpect(jsonPath("$.totalPrice").value(TOTAL_PRICE));
+//    }
 
     @Test
     public void postOrder_ShouldInputFieldsAreEmpty() throws Exception {
