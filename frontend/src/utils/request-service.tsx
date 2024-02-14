@@ -21,6 +21,23 @@ class RequestService {
     };
 }
 
+
+type AxiosHeaders = {
+    [key: string]: string;
+};
+const setHeader = (isAuthRequired: boolean, contentType: string) => {
+    const headers: AxiosHeaders = {};
+    if (isAuthRequired) {
+        headers["Authorization"] = localStorage.getItem("token") || "";
+    } else {
+        delete axios.defaults.headers.common["Authorization"];
+    }
+    headers["Content-Type"] = contentType;
+
+    return headers;
+};
+
+
 const createRequest = (method: Method, url: string, body: any, isAuthRequired: boolean, contentType: string) => {
     return axios({
         method: method,
@@ -30,13 +47,5 @@ const createRequest = (method: Method, url: string, body: any, isAuthRequired: b
     });
 };
 
-const setHeader = (isAuthRequired: boolean, contentType: string) => {
-    if (isAuthRequired) {
-        axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
-    } else {
-        delete axios.defaults.headers.common["Authorization"];
-    }
-    axios.defaults.headers.common["Content-Type"] = contentType;
-};
 
 export default new RequestService();
