@@ -95,13 +95,15 @@ const Cart: FC = (): ReactElement => {
                                     ))}
                                 </Col>
                                 <Col span={8}>
-                                    <Row>
-                                        <Col span={12}>
+                                    <Row gutter={16} style={{ marginTop: 16 }}>
+                                        <Col>
                                             <CartTotalPrice />
                                         </Col>
-                                        <Col span={12}>
+                                    </Row>
+                                    <Row gutter={16}>
+                                        <Col>
                                             <Link to={ORDER}>
-                                                <Button type="primary" icon={<ShoppingOutlined />} size="large">
+                                                <Button type="primary" size="large">
                                                     Checkout
                                                 </Button>
                                             </Link>

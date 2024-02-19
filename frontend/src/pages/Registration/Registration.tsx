@@ -45,8 +45,11 @@ const Registration: FC = (): ReactElement => {
 
     return (
         <ContentWrapper>
-            <ContentTitle icon={<UserAddOutlined />} title={"SIGN UP"} />
-            <Row gutter={32}>
+            <div style={{ textAlign:"center"}}>
+                <ContentTitle title={"SIGN UP"} />
+            </div>
+            
+            <Row justify="center" gutter={32}>
                 <Col span={12}>
                     <Form onFinish={onClickSignIn}>
                         <Divider />
@@ -89,7 +92,6 @@ const Registration: FC = (): ReactElement => {
                         />
                         <FormInput
                             title={"Confirm password:"}
-                            icon={<LockOutlined />}
                             titleSpan={8}
                             wrapperSpan={16}
                             name={"password2"}
@@ -97,17 +99,24 @@ const Registration: FC = (): ReactElement => {
                             placeholder={"Confirm password"}
                             inputPassword
                         />
-                        <IconButton disabled={isLoading} title={"Sign up"} icon={<UserAddOutlined />} />
-                        <Form.Item
-                            help={errors.captchaError}
-                            validateStatus={errors.captchaError ? "error" : "validating"}
-                            style={{ marginTop: 16 }}
-                        >
-                            <ReCAPTCHA
-                                onChange={onChangeRecaptcha}
-                                sitekey="6Lc5cLkZAAAAAN8mFk85HQieB9toPcWFoW0RXCNR"
-                            />
-                        </Form.Item>
+                        <div style={{ textAlign:"center"}}>
+                            <IconButton disabled={isLoading} title={"Sign up"} icon={<UserAddOutlined />} />
+                        </div>
+                        <Row justify="center" align="middle" style={{ marginTop: "10%" }}>
+                            <Col>
+                                <Form.Item
+                                    help={errors.captchaError}
+                                    validateStatus={errors.captchaError ? "error" : "validating"}
+                                >
+                                    <ReCAPTCHA
+                                        onChange={onChangeRecaptcha}
+                                        sitekey="6Lc5cLkZAAAAAN8mFk85HQieB9toPcWFoW0RXCNR"
+                                    />
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        
+                        
                     </Form>
                 </Col>
             </Row>

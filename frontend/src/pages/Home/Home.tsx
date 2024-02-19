@@ -1,9 +1,9 @@
 import React, {FC, ReactElement, useEffect} from "react";
 
-import CarouselImageSlider from "./CarouselImageSlider/CarouselImageSlider";
+import Video from "./Video/Video";
 import SliderBrands from "./SliderBrands/SliderBrands";
-import HomePageTheme from "./HomePageTheme/HomePageTheme";
-import PerfumeCardsSlider from "./PerfumeCardsSlider/PerfumeCardsSlider";
+import BottomText from "./BottomText/BottomText";
+
 
 const Home: FC = (): ReactElement => {
     
@@ -13,10 +13,9 @@ const Home: FC = (): ReactElement => {
     
     return (
         <div>
-            <CarouselImageSlider />
+            <Video />
             <SliderBrands />
-            <HomePageTheme />
-            <PerfumeCardsSlider />
+            <BottomText />
         </div>
     );
 };

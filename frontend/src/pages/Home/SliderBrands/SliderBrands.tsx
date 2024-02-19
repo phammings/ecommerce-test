@@ -8,13 +8,10 @@ import "./SliderBrands.css";
 const SliderBrands: FC = (): ReactElement => {
     return (
         <div className={"brands-wrapper"}>
-            <Typography.Title level={3} className={"brands-wrapper-title"}>
-                BRANDS
-            </Typography.Title>
             <Carousel className={"brands-carousel"} autoplay>
-                <SliderBrandsItem brands={brandsItem.slice(0, 6)} />
-                <SliderBrandsItem brands={brandsItem.slice(6, 12)} />
-                <SliderBrandsItem brands={brandsItem.slice(12, 18)} />
+                <SliderBrandsItem brands={brandsItem.slice(0, 4)} />
+                <SliderBrandsItem brands={brandsItem.slice(4, 8)} />
+                <SliderBrandsItem brands={brandsItem.slice(8, 12)} />
             </Carousel>
         </div>
     );

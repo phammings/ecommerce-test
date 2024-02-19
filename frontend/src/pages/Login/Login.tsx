@@ -2,17 +2,13 @@ import React, { FC, ReactElement, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Alert, Col, Divider, Form, Row, Space } from "antd";
-import { LockOutlined, LoginOutlined, MailOutlined } from "@ant-design/icons";
+import { LockOutlined, MailOutlined } from "@ant-design/icons";
 
-import googleLogo from "../../img/google.png";
-import facebookLogo from "../../img/facebook.png";
-import githubLogo from "../../img/github.png";
 import { selectErrorMessage } from "../../redux-toolkit/auth/auth-selector";
 import { resetAuthState } from "../../redux-toolkit/auth/auth-slice";
 import { activateAccount, login } from "../../redux-toolkit/auth/auth-thunks";
 import { selectSuccessMessage } from "../../redux-toolkit/user/user-selector";
 import { FORGOT } from "../../constants/routeConstants";
-import SocialButton from "./SocialButton/SocialButton";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import ContentTitle from "../../components/ContentTitle/ContentTitle";
 import FormInput from "../../components/FormInput/FormInput";
@@ -44,8 +40,10 @@ const Login: FC = (): ReactElement => {
 
     return (
         <ContentWrapper>
-            <ContentTitle icon={<LoginOutlined />} title={"SIGN IN"} />
-            <Row gutter={32}>
+            <div style={{ textAlign:"center"}}>
+                <ContentTitle title={"SIGN IN"} />
+            </div>
+            <Row justify="center" gutter={32}>
                 <Col span={12}>
                     <Form onFinish={onClickSignIn}>
                         <Divider />
@@ -68,20 +66,18 @@ const Login: FC = (): ReactElement => {
                             placeholder={"Password"}
                             inputPassword
                         />
-                        <Space align={"baseline"} size={13}>
-                            <IconButton title={"Sign in"} icon={<LoginOutlined />} />
-                            <Link to={FORGOT}>Forgot password?</Link>
-                        </Space>
+                        <Row justify="center" align="middle">
+                            <Space align={"baseline"} size={13}>
+                                <IconButton title={"Sign in"} icon={null} />
+                                <Link to={FORGOT}>Forgot password?</Link>
+                            </Space>
+                        </Row>
                     </Form>
                 </Col>
-                <Col span={12}>
-                    <Space direction={"vertical"} className={"social-login-wrapper"}>
-                        <SocialButton socialNetwork={"google"} image={googleLogo} />
-                        <SocialButton socialNetwork={"facebook"} image={facebookLogo} />
-                        <SocialButton socialNetwork={"github"} image={githubLogo} />
-                    </Space>
-                </Col>
             </Row>
+            
+            
+            
         </ContentWrapper>
     );
 };

@@ -106,15 +106,6 @@ const Order: FC = (): ReactElement => {
                             placeholder={"Enter the address"}
                         />
                         <FormInput
-                            title={"Index:"}
-                            titleSpan={5}
-                            wrapperSpan={19}
-                            name={"postIndex"}
-                            error={errors.postIndexError}
-                            disabled={isOrderLoading}
-                            placeholder={"Enter the index"}
-                        />
-                        <FormInput
                             title={"Mobile:"}
                             titleSpan={5}
                             wrapperSpan={19}
@@ -132,6 +123,17 @@ const Order: FC = (): ReactElement => {
                             disabled={isOrderLoading}
                             placeholder={"example@gmail.com"}
                         />
+                        <Row style={{ marginTop: "20px" }} />
+                        <FormInput
+                            title={"Post index:"}
+                            titleSpan={5}
+                            wrapperSpan={19}
+                            name={"postIndex"}
+                            error={errors.postIndexError}
+                            disabled={isOrderLoading}
+                            placeholder={"Enter Post index number"}
+                        />
+                        
                     </Col>
                     <Col span={12}>
                         <Row gutter={[32, 32]}>
@@ -145,18 +147,23 @@ const Order: FC = (): ReactElement => {
                         </Row>
                         <Row gutter={[32, 32]} style={{ marginTop: 16 }}>
                             <Col span={12}>
-                                <Typography.Title level={3}>To pay : $ {totalPrice}.00</Typography.Title>
-                            </Col>
-                            <Col>
-                                <Button
-                                    htmlType={"submit"}
-                                    loading={isOrderLoading}
-                                    type="primary"
-                                    size="large"
-                                    icon={<CheckCircleOutlined />}
-                                >
-                                    Validate order
-                                </Button>
+                                <Row gutter={16} style={{ marginTop: 16 }}>
+                                    <Col>
+                                        <Typography.Title level={3}>To pay : $ {totalPrice}.00</Typography.Title>
+                                    </Col>
+                                </Row>
+                                <Row gutter={16}>
+                                    <Col>
+                                        <Button
+                                        htmlType={"submit"}
+                                        loading={isOrderLoading}
+                                        type="primary"
+                                        size="large"
+                                        icon={<CheckCircleOutlined />}>
+                                        Validate order
+                                        </Button>
+                                    </Col>
+                                </Row>
                             </Col>
                         </Row>
                     </Col>

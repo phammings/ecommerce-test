@@ -11,10 +11,10 @@ type PropsType = {
 
 const InputSearch: FC<PropsType> = ({ onSearch, form }): ReactElement => {
     return (
-        <Form onFinish={onSearch} form={form}>
-            <Input.Group compact>
-                <Form.Item name={"searchValue"}>
-                    <Input placeholder={"Search..."} />
+        <Form onFinish={onSearch} form={form} style={{ display: 'flex', alignItems: 'center', marginLeft: "-30px"}}>
+            <Input.Group compact style={{ display: 'flex', alignItems: 'center' }}>
+                <Form.Item name={"searchValue"} style={{ marginBottom: 0 }}>
+                    <Input placeholder={"Search..."} style={{ width: 200 }} />
                 </Form.Item>
                 <IconButton title={"Search"} icon={<SearchOutlined />} />
             </Input.Group>

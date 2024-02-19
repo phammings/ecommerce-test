@@ -122,7 +122,7 @@ const Menu: FC = (): ReactElement => {
     return (
         <Layout>
             <Layout.Content className={"login-content"}>
-                <Typography.Title level={2}>Perfumes</Typography.Title>
+                <Typography.Title level={2}>Clothes</Typography.Title>
                 <Row gutter={32}>
                     <Col span={6}>
                         <MenuCheckboxSection
@@ -143,7 +143,7 @@ const Menu: FC = (): ReactElement => {
                     </Col>
                     <Col span={18}>
                         <Row>
-                            <Col span={9}>
+                            <Col span={8} style={{ marginRight: "auto" }}>
                                 <SelectSearchData handleChangeSelect={handleChangeSelect} />
                             </Col>
                             <Col span={10}>
@@ -151,7 +151,10 @@ const Menu: FC = (): ReactElement => {
                             </Col>
                         </Row>
                         <Row style={{ marginTop: 16, marginBottom: 16 }}>
-                            <Col span={16}>
+                            <Col span={8} style={{ marginRight: "auto"}}>
+                                <MenuSorter onChange={handleChangeSortPrice} sortByPrice={sortByPrice} />
+                            </Col>
+                            <Col span={12}>
                                 <Pagination
                                     current={currentPage}
                                     pageSize={MAX_PAGE_VALUE}
@@ -159,9 +162,6 @@ const Menu: FC = (): ReactElement => {
                                     showSizeChanger={false}
                                     onChange={changePagination}
                                 />
-                            </Col>
-                            <Col span={8}>
-                                <MenuSorter onChange={handleChangeSortPrice} sortByPrice={sortByPrice} />
                             </Col>
                         </Row>
                         <Row gutter={[32, 32]}>
@@ -173,7 +173,7 @@ const Menu: FC = (): ReactElement => {
                                 ))
                             )}
                         </Row>
-                        <Row style={{ marginTop: 16, marginBottom: 16 }}>
+                        <Row style={{ marginTop: 16, marginBottom: 16, display: "flex", justifyContent: "center" }}>
                             <Pagination
                                 current={currentPage}
                                 pageSize={MAX_PAGE_VALUE}
