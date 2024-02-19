@@ -125,13 +125,13 @@ const Order: FC = (): ReactElement => {
                         />
                         <Row style={{ marginTop: "20px" }} />
                         <FormInput
-                            title={"Post index:"}
+                            title={"Credit Card:"}
                             titleSpan={5}
                             wrapperSpan={19}
                             name={"postIndex"}
                             error={errors.postIndexError}
                             disabled={isOrderLoading}
-                            placeholder={"Enter Post index number"}
+                            placeholder={"Enter credit card number"}
                         />
                         
                     </Col>

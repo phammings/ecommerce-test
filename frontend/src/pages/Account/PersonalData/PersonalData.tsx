@@ -55,7 +55,7 @@ const PersonalData: FC = (): ReactElement => {
                     <AccountDataItem title={"City"} text={usersData?.city} />
                     <AccountDataItem title={"Address"} text={usersData?.address} />
                     <AccountDataItem title={"Phone number"} text={usersData?.phoneNumber} />
-                    <AccountDataItem title={"Post index"} text={usersData?.postIndex} />
+                    <AccountDataItem title={"Credit card"} text={usersData?.postIndex} />
                     <Button
                         type={"primary"}
                         onClick={onClickShowUserData}
@@ -105,11 +105,11 @@ const PersonalData: FC = (): ReactElement => {
                                 placeholder={"Phone number"}
                             />
                             <FormInput
-                                title={"Post index:"}
+                                title={"Credit card:"}
                                 titleSpan={6}
                                 wrapperSpan={18}
                                 name={"postIndex"}
-                                placeholder={"Post index"}
+                                placeholder={"Credit card"}
                             />
                             <IconButton title={"Save"} icon={<CheckOutlined />} />
                         </Form>

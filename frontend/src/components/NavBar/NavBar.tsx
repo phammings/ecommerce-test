@@ -26,7 +26,7 @@ const NavBar: FC = (): ReactElement => {
             <div className={"navbar-logo-wrapper"}>
             <Link to={BASE}>
                 <h1 className={"navbar-logo"} >
-                        About:More
+                    Clothes.
                 </h1>
             </Link>
             </div>

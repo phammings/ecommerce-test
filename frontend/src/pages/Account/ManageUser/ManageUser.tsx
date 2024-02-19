@@ -65,7 +65,7 @@ const ManageUser: FC = (): ReactElement => {
                                         <AccountDataItem title={"City"} text={city} />
                                         <AccountDataItem title={"Address"} text={address} />
                                         <AccountDataItem title={"Phone number"} text={phoneNumber} />
-                                        <AccountDataItem title={"Post index"} text={postIndex} />
+                                        <AccountDataItem title={"Credit card"} text={postIndex} />
                                     </Col>
                                 </Row>
                             </Card>
@@ -110,7 +110,7 @@ const ManageUser: FC = (): ReactElement => {
                                                         key: "address"
                                                     },
                                                     {
-                                                        title: "Post index",
+                                                        title: "Credit card",
                                                         dataIndex: "postIndex",
                                                         key: "postIndex"
                                                     },

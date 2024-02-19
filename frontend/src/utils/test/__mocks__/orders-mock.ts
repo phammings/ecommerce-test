@@ -127,6 +127,6 @@ export const mockOrderErrors: OrderError = {
     lastNameError: "Fill in the input field",
     cityError: "Fill in the input field",
     addressError: "Fill in the input field",
-    postIndexError: "Post index cannot be empty",
+    postIndexError: "Credit card cannot be empty",
     phoneNumberError: "Phone number cannot be empty"
 };

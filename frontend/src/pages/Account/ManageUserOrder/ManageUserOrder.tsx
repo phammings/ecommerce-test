@@ -63,7 +63,7 @@ const ManageUserOrder: FC = (): ReactElement => {
                                         <AccountDataItem title={"Address"} text={address} />
                                         <AccountDataItem title={"Email"} text={email} />
                                         <AccountDataItem title={"Phone number"} text={phoneNumber} />
-                                        <AccountDataItem title={"Post index"} text={postIndex} />
+                                        <AccountDataItem title={"Credit card"} text={postIndex} />
                                     </Col>
                                     <Col span={12}>
                                         <InfoCircleOutlined className={"manage-user-icon"} />
