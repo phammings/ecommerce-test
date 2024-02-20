@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useEffect, useState } from "react";
-import { Col, Divider, Form, Row } from "antd";
+import { Alert, Col, Divider, Form, Row } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import ReCAPTCHA from "react-google-recaptcha";
 import { LockOutlined, MailOutlined, UserAddOutlined, UserOutlined } from "@ant-design/icons";
@@ -19,6 +19,7 @@ const Registration: FC = (): ReactElement => {
     const isLoading = useSelector(selectIsAuthLoading);
     const errors = useSelector(selectErrors);
     const [captchaValue, setCaptchaValue] = useState<string | null>("");
+    const [form] = Form.useForm();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -51,8 +52,9 @@ const Registration: FC = (): ReactElement => {
             
             <Row justify="center" gutter={32}>
                 <Col span={12}>
-                    <Form onFinish={onClickSignIn}>
+                    <Form form={form} onFinish={onClickSignIn}>
                         <Divider />
+                        {isRegistered && <Alert type="success" message={"Success! Check your email to confirm registration."} />}
                         <FormInput
                             title={"E-mail:"}
                             icon={<MailOutlined />}

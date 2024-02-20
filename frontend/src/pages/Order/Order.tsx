@@ -2,7 +2,7 @@ import React, {FC, ReactElement, useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { CheckCircleOutlined, ShoppingOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Row, Typography } from "antd";
+import { Button, Col, Form, Row, Typography, Alert } from "antd";
 
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import ContentTitle from "../../components/ContentTitle/ContentTitle";
@@ -56,9 +56,11 @@ const Order: FC = (): ReactElement => {
         };
     }, []);
 
+
+
     const onFormSubmit = (order: OrderFormData): void => {
-        const perfumesId = Object.fromEntries(new Map(JSON.parse(localStorage.getItem("perfumes") as string)));
-        dispatch(addOrder({ order: { ...order, perfumesId, totalPrice }, history }));
+            const perfumesId = Object.fromEntries(new Map(JSON.parse(localStorage.getItem("perfumes") as string)));
+            dispatch(addOrder({ order: { ...order, perfumesId, totalPrice }, history }));
     };
 
     return (
@@ -124,6 +126,7 @@ const Order: FC = (): ReactElement => {
                             placeholder={"example@gmail.com"}
                         />
                         <Row style={{ marginTop: "20px" }} />
+                        {/* {isValidLength && <Alert type="error" message={"Credit card number must be 16 digits."} />} */}
                         <FormInput
                             title={"Credit Card:"}
                             titleSpan={5}

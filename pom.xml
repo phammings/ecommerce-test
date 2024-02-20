@@ -79,7 +79,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--flywaydb-->
+<!--        flywaydb-->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
@@ -237,6 +237,16 @@
                     </execution>
                 </executions>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.flywaydb</groupId>-->
+<!--                <artifactId>flyway-maven-plugin</artifactId>-->
+<!--                <version>6.4.4</version>-->
+<!--                <configuration>-->
+<!--                    <url>jdbc:postgresql://localhost:5432/perfume</url>-->
+<!--                    <user>postgres</user>-->
+<!--                    <password>root</password>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

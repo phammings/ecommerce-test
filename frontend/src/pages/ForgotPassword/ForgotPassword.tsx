@@ -37,13 +37,16 @@ const ForgotPassword: FC = (): ReactElement => {
 
     return (
         <ContentWrapper>
-            <ContentTitle icon={<KeyOutlined />} title={"FORGOT PASSWORD ?"} />
-            <Row gutter={32}>
+            <div style={{textAlign:"center"}}>
+                <ContentTitle icon={null} title={"FORGOT PASSWORD"} />
+            </div>
+            
+            <Row justify="center" gutter={32}>
                 <Col span={12}>
                     <Form form={form} onFinish={onClickSend}>
                         <Divider />
-                        <Typography.Text style={{ display: "block", marginBottom: 16 }}>
-                            Enter your email address that you used to create your account.
+                        <Typography.Text style={{ display: "block", marginBottom: "24px", textAlign:"center" }}>
+                            Enter the email address used to create the account.
                         </Typography.Text>
                         {error && <Alert type="error" message={error} />}
                         {success && <Alert type="success" message={success} />}
@@ -56,7 +59,9 @@ const ForgotPassword: FC = (): ReactElement => {
                             placeholder={"E-mail"}
                             rule={[{ required: true, message: "Please input your E-mail!" }]}
                         />
-                        <IconButton disabled={isLoading} title={"Send"} icon={<SendOutlined />} />
+                        <div style={{textAlign:"center", marginTop:"16px"}}>
+                            <IconButton disabled={isLoading} title={"Send"} icon={null} />
+                        </div>
                     </Form>
                 </Col>
             </Row>
